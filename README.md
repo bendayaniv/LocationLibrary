@@ -28,7 +28,7 @@ In build.gradle.kts of the app add the following line
 ```java
 dependencies {
     ...
-    implementation("com.github.bendayaniv:LocationLibrary:1.00.03")
+    implementation("com.github.bendayaniv:LocationLibrary:1.00.04")
     ...
 }
 ```
@@ -93,13 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
 ## Methods
 
-- getInstance(): Returns the singleton instance of MyLocation.
-- initializeApp(Application application, Boolean mustToUse): Initializes the MyLocation instance.
-- checkLocationAndRequestUpdates(AppCompatActivity activity, BiConsumer<Double, Double> locationCallback): Checks location settings and requests updates.
-- isLocationEnabled(): Checks if location services are enabled on the device.
-- onRequestPermissionsResult(AppCompatActivity activity, int requestCode, String[] permissions, int[] grantResults): Handles the result of permission requests.
-- onActivityResult(AppCompatActivity activity, int requestCode, int resultCode): Handles the result of activities launched for location settings.
+- `getInstance()`: Returns the singleton instance of MyLocation.
+- `initializeApp(Application application, Boolean mustToUse)`: Initializes the MyLocation instance.
+- `checkLocationAndRequestUpdates(AppCompatActivity activity, BiConsumer<Double, Double> locationCallback)`: Checks location settings and requests updates.
+- `isLocationEnabled()`: Checks if location services are enabled on the device.
+- `onRequestPermissionsResult(AppCompatActivity activity, int requestCode, String[] permissions, int[] grantResults)`: Handles the result of permission requests.
+- `onActivityResult(AppCompatActivity activity, int requestCode, int resultCode)`: Handles the result of activities launched for location settings.
 
-## License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
 
