@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
 //    implementation(project(":locationlibrary"))
-    implementation("com.github.bendayaniv:LocationLibrary:1.00.02")
+    implementation("com.github.bendayaniv:LocationLibrary:1.00.04")
 
 //    implementation("androidx.appcompat:appcompat:1.6.1")
 //    implementation("com.google.android.gms:play-services-location:21.0.1")

@@ -28,7 +28,7 @@ In build.gradle.kts of the app add the following line
 ```java
 dependencies {
     ...
-    implementation("com.github.bendayaniv:LocationLibrary:1.00.04")
+    implementation("com.github.bendayaniv:LocationLibrary:1.00.05")
     ...
 }
 ```
