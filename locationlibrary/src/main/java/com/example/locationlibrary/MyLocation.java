@@ -79,6 +79,7 @@ public class MyLocation {
      * Initializes the MyLocation with the application context.
      *
      * @param application The Application instance.
+     * @param mustToUse   Boolean indicating if location is required for the app to function.
      */
     public void initializeApp(Application application, Boolean mustToUse) {
         this.mustToUse = mustToUse;
@@ -158,7 +159,6 @@ public class MyLocation {
                     requestLocationPermission(activity);
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> {
-//                    handleLocationError("Location permission is required but was denied.");
                     checkLocationAndRequestUpdates(activity, locationCallback);
                 })
                 .show();
@@ -189,7 +189,6 @@ public class MyLocation {
                 })
                 .setNegativeButton("Cancel", (dialog, which) -> {
                     dialog.dismiss();
-//                    handleLocationError("Location services are required but not enabled.");
                     checkLocationAndRequestUpdates(activity, locationCallback);
                 })
                 .show();
@@ -218,11 +217,9 @@ public class MyLocation {
                     resolvable.startResolutionForResult(activity, REQUEST_CHECK_SETTINGS);
                 } catch (IntentSender.SendIntentException sendEx) {
                     Log.e(TAG, "Error starting resolution for GPS settings", sendEx);
-//                    handleLocationError("Unable to start location settings resolution.");
                     checkLocationAndRequestUpdates(activity, locationCallback);
                 }
             } else {
-//                handleLocationError("Location settings are not satisfied.");
                 checkLocationAndRequestUpdates(activity, locationCallback);
             }
         });
@@ -275,17 +272,6 @@ public class MyLocation {
             locationCallback.accept(latitude, longitude);
         }
     }
-
-//    /**
-//     * Handles location-related errors by logging and showing a toast.
-//     *
-//     * @param error The error message.
-//     */
-//    private void handleLocationError(String error) {
-//        Log.e(TAG, "Location error: " + error);
-//        Toast.makeText(applicationContext, "Location error: " + error, Toast.LENGTH_LONG).show();
-//        checkLocationAndRequestUpdates(activity, locationCallback);
-//    }
 
     /**
      * Handles the result of the permission request.
