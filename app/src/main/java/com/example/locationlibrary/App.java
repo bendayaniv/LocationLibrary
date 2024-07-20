@@ -8,6 +8,6 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        MyLocation.getInstance().initializeApp(this);
+        MyLocation.getInstance().initializeApp(this, false);
     }
 }

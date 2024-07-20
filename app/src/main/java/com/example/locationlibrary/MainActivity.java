@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
             MyLocation.getInstance().checkLocationAndRequestUpdates(this, this::updateLocationStatus);
         });
 
-//        Button btnGoToSecond = findViewById(R.id.btn_go_to_second);
-//        btnGoToSecond.setOnClickListener(v -> {
-//            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-//            startActivity(intent);
-//        });
+        requestLocationUpdates();
+    }
+
+    private void requestLocationUpdates() {
+        MyLocation.getInstance().checkLocationAndRequestUpdates(this, this::updateLocationStatus);
     }
 
     @Override
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        Log.d(TAG, "onRequestPermissionsResult: requestCode=" + requestCode);
         MyLocation.getInstance().onRequestPermissionsResult(this, requestCode, permissions, grantResults);
     }
 
